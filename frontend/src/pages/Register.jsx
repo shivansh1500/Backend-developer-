@@ -18,7 +18,7 @@ const Register = () => {
     setSuccess('');
     
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', { email, password, role });
+      const res = await axios.post('http://localhost:8080/api/auth/register', { email, password, role });
       setSuccess('Registration successful! Logging in...');
       setTimeout(() => {
         login(res.data.data);
