@@ -15,7 +15,7 @@ const Dashboard = () => {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://localhost:8080/api/tasks');
+      const res = await axios.get('https://backend-developer-gcaj.onrender.com/api/tasks');
       setTasks(res.data.data);
     } catch (err) {
       setError('Failed to load tasks');
@@ -32,9 +32,9 @@ const Dashboard = () => {
     e.preventDefault();
     try {
       if (isEditing) {
-        await axios.put(`http://localhost:8080/api/tasks/${currentTask._id}`, currentTask);
+        await axios.put(`https://backend-developer-gcaj.onrender.com/api/tasks/${currentTask._id}`, currentTask);
       } else {
-        await axios.post('http://localhost:8080/api/tasks', currentTask);
+        await axios.post('https://backend-developer-gcaj.onrender.com/api/tasks', currentTask);
       }
       setShowModal(false);
       fetchTasks();
@@ -46,7 +46,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this task?')) {
       try {
-        await axios.delete(`http://localhost:8080/api/tasks/${id}`);
+        await axios.delete(`https://backend-developer-gcaj.onrender.com/api/tasks/${id}`);
         fetchTasks();
       } catch (err) {
         setError('Failed to delete task');
