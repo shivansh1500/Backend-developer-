@@ -15,7 +15,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // Matches your Vite/React port
+  origin: "https://backend-developer-dusky.vercel.app", // Matches your Vite/React port
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true // Helpful if you eventually use cookies/sessions
